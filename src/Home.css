@@ -1,0 +1,101 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.home-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(110, 231, 160, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 231, 160, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.home-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  text-align: center;
+}
+
+.home-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.home-lead {
+  margin: 0 auto 2rem;
+  max-width: 560px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.home-inline-link {
+  color: var(--green-dark);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--green-border);
+}
+
+.home-inline-link:hover {
+  color: var(--green-hover);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--green);
+  border: 1px solid var(--green);
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background: var(--green-hover);
+  border-color: var(--green-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--green-border);
+  background: var(--green-soft);
+  transform: translateY(-1px);
+}
