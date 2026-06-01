@@ -1,0 +1,98 @@
+.customer-carousel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 4rem;
+  padding: 1.35rem 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.customer-carousel__viewport {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.customer-carousel__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  width: max-content;
+  padding: 0 1rem;
+  animation: customer-scroll 35s linear infinite;
+}
+
+.customer-carousel__logo {
+  flex-shrink: 0;
+  font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0.85;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.customer-carousel__logo:hover {
+  color: var(--text);
+  opacity: 1;
+}
+
+.customer-carousel__label {
+  flex-shrink: 0;
+  margin-right: clamp(1rem, 3vw, 2.5rem);
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--green-soft);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+@keyframes customer-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-carousel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.25rem 0 1rem;
+  }
+
+  .customer-carousel__label {
+    align-self: center;
+    margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .customer-carousel__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem 1.5rem;
+    padding: 0 1.5rem 0.5rem;
+  }
+}

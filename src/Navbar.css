@@ -65,6 +65,71 @@
   color: var(--text);
 }
 
+.nav-dropdown-wrap {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nav-dropdown-icon {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-wrap.open .nav-dropdown-icon,
+.nav-dropdown-wrap:hover .nav-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 12rem;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.nav-dropdown-wrap:hover .nav-dropdown,
+.nav-dropdown-wrap.open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+  background: var(--green-soft);
+  color: var(--text);
+}
+
 .nav-cta {
   flex-shrink: 0;
   padding: 0.55rem 1.1rem;
@@ -142,6 +207,36 @@
   .nav-link {
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--border);
+  }
+
+  .nav-dropdown-wrap {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+  }
+
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: none;
+    border: none;
+    padding: 0 0 0.75rem;
+    display: none;
+  }
+
+  .nav-dropdown-wrap.open .nav-dropdown {
+    display: block;
+  }
+
+  .nav-dropdown-wrap:hover .nav-dropdown {
+    display: block;
   }
 
   .nav-link:last-child {
