@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import { platformNavItems, platformPaths } from './platformPages';
 import './Navbar.css';
 
 const navItemsAfterWhatWeDo = [
@@ -8,14 +9,7 @@ const navItemsAfterWhatWeDo = [
   { to: '/contact', label: 'Contact' },
 ];
 
-const whatWeDoItems = [
-  { to: '/what-we-do', label: 'Research' },
-  { to: '/what-we-do', label: 'Drafting' },
-  { to: '/what-we-do', label: 'Case Contextualization' },
-  { to: '/what-we-do', label: 'Legal Research' },
-  { to: '/what-we-do', label: 'Legal Drafting' },
-  { to: '/what-we-do', label: 'Legal Case Contextualization' },
-];
+const whatWeDoItems = platformNavItems;
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,7 +21,7 @@ const Navbar = () => {
     setIsDropdownOpen(false);
   };
 
-  const isWhatWeDoActive = location.pathname === '/what-we-do';
+  const isWhatWeDoActive = platformPaths.includes(location.pathname);
 
   return (
     <header className="navbar">
@@ -46,12 +40,17 @@ const Navbar = () => {
               Home
             </Link>
 
-            <div className={`nav-dropdown-wrap ${isDropdownOpen ? 'open' : ''}`}>
+            <div
+              className={`nav-dropdown-wrap ${isDropdownOpen ? 'open' : ''}`}
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
               <button
                 type="button"
                 className={`nav-link nav-dropdown-trigger ${isWhatWeDoActive ? 'active' : ''}`}
                 aria-expanded={isDropdownOpen}
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                aria-haspopup="true"
+                onClick={() => setIsDropdownOpen((open) => !open)}
               >
                 What we do
                 <ChevronDown size={14} className="nav-dropdown-icon" aria-hidden="true" />

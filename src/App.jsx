@@ -3,10 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Home from './Home';
+import PlatformPage from './PlatformPage';
 import PlaceholderPage from './PlaceholderPage';
 import Contact from './Contact';
 import Signup from './Signup';
 import Login from './Login';
+import { platformPages } from './platformPages';
 
 const App = () => (
   <div className="app-layout">
@@ -14,7 +16,22 @@ const App = () => (
     <main className="app-main">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/what-we-do" element={<PlaceholderPage title="What we do" />} />
+        <Route
+          path={platformPages.drafting.path}
+          element={<PlatformPage page={platformPages.drafting} />}
+        />
+        <Route
+          path={platformPages.research.path}
+          element={<PlatformPage page={platformPages.research} />}
+        />
+        <Route
+          path={platformPages.vault.path}
+          element={<PlatformPage page={platformPages.vault} />}
+        />
+        <Route
+          path={platformPages.security.path}
+          element={<PlatformPage page={platformPages.security} />}
+        />
         <Route path="/Industry-Solutions" element={<PlaceholderPage title="Industry Solutions" />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />

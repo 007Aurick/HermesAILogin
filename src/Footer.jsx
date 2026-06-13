@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './hermesailogo.jpg';
+import { platformNavItems } from './platformPages';
 import './Footer.css';
 
 const quickLinks = [
-  { to: '/what-we-do', label: 'What we do' },
-  { to: '/Industry-Solutions', label: 'Industry Solutions' },
+  ...platformNavItems,
   { to: '/contact', label: 'Contact' },
 ];
-
 const supportLinks = [
   { to: '/contact', label: 'Contact Us' },
   { to: '/privacy', label: 'Privacy Policy' },
@@ -55,12 +54,11 @@ const Footer = () => (
       <div className="footer-bottom">
         <p className="footer-copy">© 2026 HermesAI. All rights reserved.</p>
         <div className="footer-social">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/hermes-ai-canada" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>
+         
+
         </div>
       </div>
     </div>
