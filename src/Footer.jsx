@@ -6,6 +6,7 @@ import './Footer.css';
 
 const quickLinks = [
   ...platformNavItems,
+  { to: '/Industry-Solutions', label: 'Industry Solutions' },
   { to: '/contact', label: 'Contact' },
 ];
 const supportLinks = [

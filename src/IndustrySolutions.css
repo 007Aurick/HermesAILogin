@@ -1,0 +1,71 @@
+.industry-segments {
+  padding: 4rem 0;
+}
+
+.industry-section-title {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.industry-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.industry-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.industry-card-lead {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.industry-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.industry-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.industry-card li + li {
+  margin-top: 0.5rem;
+}
+
+.industry-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+@media (max-width: 768px) {
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+}

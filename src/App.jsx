@@ -8,6 +8,7 @@ import PlaceholderPage from './PlaceholderPage';
 import Contact from './Contact';
 import Signup from './Signup';
 import Login from './Login';
+import IndustrySolutions from './IndustrySolutions';
 import { platformPages } from './platformPages';
 
 const App = () => (
@@ -32,7 +33,7 @@ const App = () => (
           path={platformPages.security.path}
           element={<PlatformPage page={platformPages.security} />}
         />
-        <Route path="/Industry-Solutions" element={<PlaceholderPage title="Industry Solutions" />} />
+        <Route path="/Industry-Solutions" element={<IndustrySolutions />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />
         <Route path="/terms" element={<PlaceholderPage title="Terms and Conditions" />} />

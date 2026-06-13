@@ -35,23 +35,27 @@ const PlatformPage = ({ page }) => (
     </section>
 
     <section className="platform-outcomes">
-      <div className="container platform-outcomes-inner">
-        <h2>What this means for your firm</h2>
-        <ul>
-          {page.outcomes.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+      <div className="container">
+        <div className="platform-outcomes-inner">
+          <h2>What this means for your firm</h2>
+          <ul>
+            {page.outcomes.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
 
     <section className="platform-cta">
-      <div className="container platform-cta-inner">
-        <h2>Ready to see {page.title} in action?</h2>
-        <p>Book a demo and explore how HermesAI fits Canadian legal workflows.</p>
-        <Link to="/contact" className="btn btn-primary">
-          Book a Demo
-        </Link>
+      <div className="container">
+        <div className="platform-cta-inner">
+          <h2>Ready to see {page.title} in action?</h2>
+          <p>Book a demo and explore how HermesAI fits Canadian legal workflows.</p>
+          <Link to="/contact" className="btn btn-primary">
+            Book a Demo
+          </Link>
+        </div>
       </div>
     </section>
   </main>
