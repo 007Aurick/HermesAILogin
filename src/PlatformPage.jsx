@@ -40,10 +40,7 @@ const PlatformPage = ({ page }) => (
     </section>
 
     <section className="platform-outcomes">
-      <div className="container platform-outcomes-layout">
-        <div className="platform-outcomes-media">
-          <img src={page.outcomeImage} alt="" />
-        </div>
+      <div className="container">
         <div className="platform-outcomes-inner">
           <h2>What this means for your firm</h2>
           <ul>

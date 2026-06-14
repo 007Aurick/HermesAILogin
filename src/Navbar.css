@@ -168,13 +168,17 @@
   transform: translateY(-1px);
 }
 
-.nav-dropdown-card-image {
+.nav-dropdown-card-icon {
   flex-shrink: 0;
-  width: 3.25rem;
-  height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 10px;
-  object-fit: cover;
-  border: 1px solid var(--border);
+  background: var(--green-soft);
+  border: 1px solid var(--green-border);
+  color: var(--green-dark);
 }
 
 .nav-dropdown-card-copy {
@@ -327,9 +331,9 @@
     background: transparent;
   }
 
-  .nav-dropdown-card-image {
-    width: 2.75rem;
-    height: 2.75rem;
+  .nav-dropdown-card-icon {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .nav-dropdown-wrap.open .nav-dropdown {

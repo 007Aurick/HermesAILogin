@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, FileText, Search, Database, Shield } from 'lucide-react';
 import { platformNavItems, platformPaths } from './platformPages';
 import './Navbar.css';
+
+const navIcons = {
+  drafting: FileText,
+  research: Search,
+  vault: Database,
+  security: Shield,
+};
 
 const navItemsAfterWhatWeDo = [
   { to: '/Industry-Solutions', label: 'Industry Solutions' },
@@ -58,17 +65,22 @@ const Navbar = () => {
               <div className="nav-dropdown nav-dropdown--mega">
                 <p className="nav-dropdown-heading">HermesAI Platform</p>
                 <ul className="nav-dropdown-grid">
-                  {whatWeDoItems.map(({ to, label, description, image }) => (
-                    <li key={label}>
-                      <Link to={to} className="nav-dropdown-card" onClick={closeMobileMenu}>
-                        <img src={image} alt="" className="nav-dropdown-card-image" />
-                        <span className="nav-dropdown-card-copy">
-                          <span className="nav-dropdown-card-title">{label}</span>
-                          <span className="nav-dropdown-card-desc">{description}</span>
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
+                  {whatWeDoItems.map(({ to, label, description, icon }) => {
+                    const Icon = navIcons[icon];
+                    return (
+                      <li key={label}>
+                        <Link to={to} className="nav-dropdown-card" onClick={closeMobileMenu}>
+                          <span className="nav-dropdown-card-icon" aria-hidden="true">
+                            <Icon size={18} />
+                          </span>
+                          <span className="nav-dropdown-card-copy">
+                            <span className="nav-dropdown-card-title">{label}</span>
+                            <span className="nav-dropdown-card-desc">{description}</span>
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
