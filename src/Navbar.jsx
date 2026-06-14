@@ -55,15 +55,22 @@ const Navbar = () => {
                 What we do
                 <ChevronDown size={14} className="nav-dropdown-icon" aria-hidden="true" />
               </button>
-              <ul className="nav-dropdown">
-                {whatWeDoItems.map(({ to, label }) => (
-                  <li key={label}>
-                    <Link to={to} onClick={closeMobileMenu}>
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="nav-dropdown nav-dropdown--mega">
+                <p className="nav-dropdown-heading">HermesAI Platform</p>
+                <ul className="nav-dropdown-grid">
+                  {whatWeDoItems.map(({ to, label, description, image }) => (
+                    <li key={label}>
+                      <Link to={to} className="nav-dropdown-card" onClick={closeMobileMenu}>
+                        <img src={image} alt="" className="nav-dropdown-card-image" />
+                        <span className="nav-dropdown-card-copy">
+                          <span className="nav-dropdown-card-title">{label}</span>
+                          <span className="nav-dropdown-card-desc">{description}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {navItemsAfterWhatWeDo.map(({ to, label }) => (

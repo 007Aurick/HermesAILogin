@@ -2,9 +2,54 @@
   position: relative;
   min-height: 100vh;
   align-items: flex-start;
-  padding-top: 10rem;
+  padding-top: 6.5rem;
   padding-bottom: 4rem;
   background: var(--bg);
+}
+
+.contact-banner {
+  position: relative;
+  width: min(1120px, 100% - 3rem);
+  height: 14rem;
+  margin: 0 auto 2.5rem;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.contact-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-banner-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(180deg, transparent 20%, rgba(15, 23, 42, 0.62) 100%);
+  color: #fff;
+}
+
+.contact-banner-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.contact-banner-overlay h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .contact .section-header {
@@ -199,6 +244,12 @@
 @media (max-width: 768px) {
   .contact {
     padding-top: 5.5rem;
+  }
+
+  .contact-banner {
+    width: calc(100% - 3rem);
+    height: 11rem;
+    margin-bottom: 2rem;
   }
 
   .contact-content {

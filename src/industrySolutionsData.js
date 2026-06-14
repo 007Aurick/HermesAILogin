@@ -49,4 +49,6 @@ export const industrySolutionsPage = {
     'Drafting, research, and document context in one platform',
     'Productivity gains without replacing lawyer judgment',
   ],
+  heroImage: '/legal-team.jpg',
+  imageAlt: 'Legal professionals collaborating in a modern office',
 };

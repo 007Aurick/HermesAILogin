@@ -6,6 +6,8 @@ export const platformPages = {
       'Generate first drafts in seconds — demand letters, summaries, memos, contracts, and legal correspondence without starting from a blank page.',
     intro:
       'HermesAI helps Canadian legal teams reduce repetitive drafting work while keeping lawyers in control of every edit and final output.',
+    heroImage: '/Lawyer4.png',
+    imageAlt: 'Legal professional reviewing documents at a desk with gavel and law books',
     highlights: [
       {
         title: 'Clause and template generation',
@@ -37,6 +39,8 @@ export const platformPages = {
       'Ask legal questions in plain English and retrieve relevant Canadian case law through integrated CanLII research workflows.',
     intro:
       'Stop switching between research tools and your workspace. HermesAI brings Canadian legal research closer to where drafting and case work already happen.',
+    heroImage: '/Lawyer3.png',
+    imageAlt: 'Scales of justice and legal research materials',
     highlights: [
       {
         title: 'Integrated CanLII workflows',
@@ -68,6 +72,8 @@ export const platformPages = {
       'Upload firm precedents, contracts, memos, and client files so AI responses are grounded in your own knowledge base.',
     intro:
       'Most legal AI tools fail because they lack firm-specific context. HermesAI builds a secure document vault that turns your internal knowledge into institutional memory.',
+    heroImage: '/legal-docs.jpg',
+    imageAlt: 'Legal documents and contract paperwork on a desk',
     highlights: [
       {
         title: 'Secure document vault',
@@ -99,6 +105,8 @@ export const platformPages = {
       'Built for Canadian legal data security — with infrastructure designed for confidentiality, control, and Canadian data residency.',
     intro:
       'For law firms, security is not a secondary feature. HermesAI is built with a security-first architecture designed with legal confidentiality in mind.',
+    heroImage: '/cyber-security.jpg',
+    imageAlt: 'Secure digital infrastructure and data protection',
     highlights: [
       {
         title: 'Canadian data residency',
@@ -126,10 +134,30 @@ export const platformPages = {
 };
 
 export const platformNavItems = [
-  { to: platformPages.drafting.path, label: 'AI Legal Drafting' },
-  { to: platformPages.research.path, label: 'CanLII Research' },
-  { to: platformPages.vault.path, label: 'Context-Aware Vault' },
-  { to: platformPages.security.path, label: 'Security & Compliance' },
+  {
+    to: platformPages.drafting.path,
+    label: 'AI Legal Drafting',
+    description: 'Generate first drafts for memos, letters, and contracts.',
+    image: platformPages.drafting.heroImage,
+  },
+  {
+    to: platformPages.research.path,
+    label: 'CanLII Research',
+    description: 'Research Canadian case law inside your workflow.',
+    image: platformPages.research.heroImage,
+  },
+  {
+    to: platformPages.vault.path,
+    label: 'Context-Aware Vault',
+    description: 'Ground AI in your firm\'s documents and precedents.',
+    image: platformPages.vault.heroImage,
+  },
+  {
+    to: platformPages.security.path,
+    label: 'Security & Compliance',
+    description: 'Canadian data residency and encrypted storage.',
+    image: platformPages.security.heroImage,
+  },
 ];
 
 export const platformPaths = platformNavItems.map(({ to }) => to);

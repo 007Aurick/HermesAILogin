@@ -84,6 +84,13 @@ const Contact = () => {
 
   return (
     <section className="contact section">
+      <div className="contact-banner" aria-hidden="true">
+        <img src="/Lawyer.jpg" alt="" />
+        <div className="contact-banner-overlay">
+          <p className="contact-banner-eyebrow">Get in touch</p>
+          <h2>Book a demo or ask a question</h2>
+        </div>
+      </div>
       <div className="container">
         <div className="section-header fade-in-up">
           <h1 className="section-title">Contact Us</h1>

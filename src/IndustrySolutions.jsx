@@ -7,18 +7,26 @@ import './IndustrySolutions.css';
 const IndustrySolutions = () => (
   <main className="platform-page industry-page">
     <section className="platform-hero">
-      <div className="container">
-        <p className="platform-eyebrow">{industrySolutionsPage.eyebrow}</p>
-        <h1>{industrySolutionsPage.title}</h1>
-        <p className="platform-subtitle">{industrySolutionsPage.subtitle}</p>
-        <p className="platform-intro">{industrySolutionsPage.intro}</p>
-        <div className="platform-actions">
-          <Link to="/contact" className="btn btn-primary">
-            Book a Demo
-          </Link>
-          <Link to="/signup" className="btn btn-secondary">
-            Try the Platform
-          </Link>
+      <div className="container platform-hero-inner">
+        <div className="platform-hero-copy">
+          <p className="platform-eyebrow">{industrySolutionsPage.eyebrow}</p>
+          <h1>{industrySolutionsPage.title}</h1>
+          <p className="platform-subtitle">{industrySolutionsPage.subtitle}</p>
+          <p className="platform-intro">{industrySolutionsPage.intro}</p>
+          <div className="platform-actions">
+            <Link to="/contact" className="btn btn-primary">
+              Book a Demo
+            </Link>
+            <Link to="/signup" className="btn btn-secondary">
+              Try the Platform
+            </Link>
+          </div>
+        </div>
+        <div className="platform-hero-media">
+          <img
+            src={industrySolutionsPage.heroImage}
+            alt={industrySolutionsPage.imageAlt}
+          />
         </div>
       </div>
     </section>
@@ -43,7 +51,10 @@ const IndustrySolutions = () => (
     </section>
 
     <section className="platform-outcomes">
-      <div className="container">
+      <div className="container platform-outcomes-layout">
+        <div className="platform-outcomes-media">
+          <img src={industrySolutionsPage.heroImage} alt="" />
+        </div>
         <div className="platform-outcomes-inner">
           <h2>Why Canadian legal teams choose HermesAI</h2>
           <ul>
