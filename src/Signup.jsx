@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AuthLayout from './AuthLayout';
+import { siteImages } from './platformPages';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ const Signup = () => {
     <AuthLayout
       title="Create an account"
       subtitle="Join HermesAI and start working in a secure Canadian legal workspace built for research, drafting, and case context."
-      visualImage="/Lawyer3.png"
+      visualImage={siteImages.signupAuth}
       visualBadge="Built for Law Firms"
       visualTitle="Your firm knowledge, organized"
       visualText="Upload precedents, research with CanLII, and draft with context-aware AI."

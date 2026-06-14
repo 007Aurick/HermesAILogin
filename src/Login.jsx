@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthLayout from './AuthLayout';
+import { siteImages } from './platformPages';
 
 const GOOGLE_CLIENT_ID =
   '796576422248-tengokkli1m2feli8lk1gu35j7678une.apps.googleusercontent.com';
@@ -77,7 +78,7 @@ const Login = () => {
     <AuthLayout
       title="Welcome back"
       subtitle="Log in to your Canadian legal workspace for drafting, research, and secure case context."
-      visualImage="/Lawyer2.png"
+      visualImage={siteImages.loginAuth}
       visualBadge="Canadian Legal AI"
       visualTitle="Practice smarter with secure AI"
       visualText="Draft faster, research Canadian case law, and keep firm knowledge in one place."

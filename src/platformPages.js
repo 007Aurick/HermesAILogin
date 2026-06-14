@@ -1,3 +1,10 @@
+export const siteImages = {
+  homeHero: '/Lawyer.jpg',
+  loginAuth: '/Lawyer2.png',
+  signupAuth: '/Lawyer3.png',
+  contactBanner: '/Lawyer4.png',
+};
+
 export const platformPages = {
   drafting: {
     path: '/drafting',
@@ -6,8 +13,10 @@ export const platformPages = {
       'Generate first drafts in seconds — demand letters, summaries, memos, contracts, and legal correspondence without starting from a blank page.',
     intro:
       'HermesAI helps Canadian legal teams reduce repetitive drafting work while keeping lawyers in control of every edit and final output.',
-    heroImage: '/Lawyer4.png',
-    imageAlt: 'Legal professional reviewing documents at a desk with gavel and law books',
+    heroImage: '/legal-docs.jpg',
+    outcomeImage: '/outcome-drafting.jpg',
+    navImage: '/nav-drafting.jpg',
+    imageAlt: 'Legal documents prepared for AI-assisted drafting',
     highlights: [
       {
         title: 'Clause and template generation',
@@ -39,8 +48,10 @@ export const platformPages = {
       'Ask legal questions in plain English and retrieve relevant Canadian case law through integrated CanLII research workflows.',
     intro:
       'Stop switching between research tools and your workspace. HermesAI brings Canadian legal research closer to where drafting and case work already happen.',
-    heroImage: '/Lawyer3.png',
-    imageAlt: 'Scales of justice and legal research materials',
+    heroImage: '/hero-research.jpg',
+    outcomeImage: '/outcome-research.jpg',
+    navImage: '/nav-research.jpg',
+    imageAlt: 'Legal research in a law library setting',
     highlights: [
       {
         title: 'Integrated CanLII workflows',
@@ -72,8 +83,10 @@ export const platformPages = {
       'Upload firm precedents, contracts, memos, and client files so AI responses are grounded in your own knowledge base.',
     intro:
       'Most legal AI tools fail because they lack firm-specific context. HermesAI builds a secure document vault that turns your internal knowledge into institutional memory.',
-    heroImage: '/legal-docs.jpg',
-    imageAlt: 'Legal documents and contract paperwork on a desk',
+    heroImage: '/hero-vault.jpg',
+    outcomeImage: '/outcome-vault.jpg',
+    navImage: '/nav-vault.jpg',
+    imageAlt: 'Organized legal files and contract paperwork',
     highlights: [
       {
         title: 'Secure document vault',
@@ -106,6 +119,8 @@ export const platformPages = {
     intro:
       'For law firms, security is not a secondary feature. HermesAI is built with a security-first architecture designed with legal confidentiality in mind.',
     heroImage: '/cyber-security.jpg',
+    outcomeImage: '/outcome-security.jpg',
+    navImage: '/nav-security.jpg',
     imageAlt: 'Secure digital infrastructure and data protection',
     highlights: [
       {
@@ -138,25 +153,25 @@ export const platformNavItems = [
     to: platformPages.drafting.path,
     label: 'AI Legal Drafting',
     description: 'Generate first drafts for memos, letters, and contracts.',
-    image: platformPages.drafting.heroImage,
+    image: platformPages.drafting.navImage,
   },
   {
     to: platformPages.research.path,
     label: 'CanLII Research',
     description: 'Research Canadian case law inside your workflow.',
-    image: platformPages.research.heroImage,
+    image: platformPages.research.navImage,
   },
   {
     to: platformPages.vault.path,
     label: 'Context-Aware Vault',
     description: 'Ground AI in your firm\'s documents and precedents.',
-    image: platformPages.vault.heroImage,
+    image: platformPages.vault.navImage,
   },
   {
     to: platformPages.security.path,
     label: 'Security & Compliance',
     description: 'Canadian data residency and encrypted storage.',
-    image: platformPages.security.heroImage,
+    image: platformPages.security.navImage,
   },
 ];
 

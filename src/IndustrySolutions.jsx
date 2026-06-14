@@ -53,7 +53,7 @@ const IndustrySolutions = () => (
     <section className="platform-outcomes">
       <div className="container platform-outcomes-layout">
         <div className="platform-outcomes-media">
-          <img src={industrySolutionsPage.heroImage} alt="" />
+          <img src={industrySolutionsPage.outcomeImage} alt="" />
         </div>
         <div className="platform-outcomes-inner">
           <h2>Why Canadian legal teams choose HermesAI</h2>

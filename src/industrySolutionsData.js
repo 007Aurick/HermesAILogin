@@ -50,5 +50,6 @@ export const industrySolutionsPage = {
     'Productivity gains without replacing lawyer judgment',
   ],
   heroImage: '/legal-team.jpg',
+  outcomeImage: '/outcome-industry.jpg',
   imageAlt: 'Legal professionals collaborating in a modern office',
 };

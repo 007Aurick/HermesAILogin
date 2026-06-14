@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { siteImages } from './platformPages';
 import { COUNTRIES } from './Countries';
 import { ORGANIZATIONS } from './Organizations';
 import './Contact.css';
@@ -85,7 +86,7 @@ const Contact = () => {
   return (
     <section className="contact section">
       <div className="contact-banner" aria-hidden="true">
-        <img src="/Lawyer.jpg" alt="" />
+        <img src={siteImages.contactBanner} alt="" />
         <div className="contact-banner-overlay">
           <p className="contact-banner-eyebrow">Get in touch</p>
           <h2>Book a demo or ask a question</h2>
