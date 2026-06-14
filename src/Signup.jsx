@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Signup.css';
+import AuthLayout from './AuthLayout';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: '',
-    username: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -32,7 +30,6 @@ const Signup = () => {
       setSubmitStatus('success');
       setFormData({
         name: '',
-        username: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -42,94 +39,91 @@ const Signup = () => {
   };
 
   return (
-    <section className="signup section">
-      <div className="container">
-        <div className="section-header fade-in-up">
-          <h1 className="section-title">Sign up</h1>
-          <p className="section-subtitle">Create an account to get started.</p>
+    <AuthLayout
+      title="Create an account"
+      subtitle="Join HermesAI and start working in a secure Canadian legal workspace built for research, drafting, and case context."
+      visualBadge="Built for Law Firms"
+      visualTitle="Your firm knowledge, organized"
+      visualText="Upload precedents, research with CanLII, and draft with context-aware AI."
+      footerLink={{
+        text: 'Already have an account?',
+        label: 'Log in',
+        to: '/login',
+      }}
+    >
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-field">
+          <label htmlFor="signup-name">Full name</label>
+          <input
+            id="signup-name"
+            type="text"
+            name="name"
+            placeholder="Jane Smith"
+            value={formData.name}
+            onChange={handleChange}
+            autoComplete="name"
+            required
+          />
         </div>
 
-        <div className="signup-content">
-          <div className="signup-form-container fade-in-up">
-            <form className="signup-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name: *"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username: *"
-                  value={formData.username}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email: *"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password: *"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password: *"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+        <div className="auth-field">
+          <label htmlFor="signup-email">Email</label>
+          <input
+            id="signup-email"
+            type="email"
+            name="email"
+            placeholder="you@lawfirm.ca"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
+          />
+        </div>
 
-              <button
-                type="submit"
-                className={`btn ${isSubmitting ? 'submitting' : ''}`}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Signing up…' : 'Sign Up'}
-              </button>
+        <div className="auth-field">
+          <label htmlFor="signup-password">Password</label>
+          <input
+            id="signup-password"
+            type="password"
+            name="password"
+            placeholder="Create a password"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="new-password"
+            required
+          />
+        </div>
 
-              {submitStatus === 'success' && (
-                <div className="submit-success">
-                  Account created (UI only — connect your backend when ready).
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                <div className="submit-error">
-                  Passwords do not match. Please try again.
-                </div>
-              )}
-            </form>
+        <div className="auth-field">
+          <label htmlFor="signup-confirm">Confirm password</label>
+          <input
+            id="signup-confirm"
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm your password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            autoComplete="new-password"
+            required
+          />
+        </div>
 
-            <p className="signup-footer">
-              Already have an account? <Link to="/login">Log in</Link>
-            </p>
+        <button type="submit" className="auth-submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Creating account…' : 'Create account'}
+        </button>
+
+        {submitStatus === 'success' && (
+          <div className="auth-message auth-message--success">
+            Account created (UI only — connect your backend when ready).
           </div>
-        </div>
-      </div>
-    </section>
+        )}
+        {submitStatus === 'error' && (
+          <div className="auth-message auth-message--error">
+            Passwords do not match. Please try again.
+          </div>
+        )}
+      </form>
+    </AuthLayout>
   );
 };
 

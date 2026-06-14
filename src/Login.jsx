@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import AuthLayout from './AuthLayout';
 
 const GOOGLE_CLIENT_ID =
   '796576422248-tengokkli1m2feli8lk1gu35j7678une.apps.googleusercontent.com';
@@ -74,72 +74,69 @@ const Login = () => {
   }, []);
 
   return (
-    <section className="login section">
-      <div className="container">
-        <div className="section-header fade-in-up">
-          <h1 className="section-title">Log in</h1>
-          <p className="section-subtitle">Welcome back to HermesAI</p>
+    <AuthLayout
+      title="Welcome back"
+      subtitle="Log in to your Canadian legal workspace for drafting, research, and secure case context."
+      visualBadge="Canadian Legal AI"
+      visualTitle="Practice smarter with secure AI"
+      visualText="Draft faster, research Canadian case law, and keep firm knowledge in one place."
+      footerLink={{
+        text: "Don't have an account?",
+        label: 'Create account',
+        to: '/signup',
+      }}
+    >
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-field">
+          <label htmlFor="login-email">Email</label>
+          <input
+            id="login-email"
+            type="email"
+            name="email"
+            placeholder="you@lawfirm.ca"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
+          />
         </div>
 
-        <div className="login-content">
-          <div className="login-form-container fade-in-up">
-            <form className="login-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email *"
-                  value={formData.email}
-                  onChange={handleChange}
-                  autoComplete="email"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password *"
-                  value={formData.password}
-                  onChange={handleChange}
-                  autoComplete="current-password"
-                  required
-                />
-              </div>
+        <div className="auth-field">
+          <label htmlFor="login-password">Password</label>
+          <input
+            id="login-password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleChange}
+            autoComplete="current-password"
+            required
+          />
+        </div>
 
-              <button
-                type="submit"
-                className={`btn ${isSubmitting ? 'submitting' : ''}`}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Signing in…' : 'Log in'}
-              </button>
+        <button type="submit" className="auth-submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Signing in…' : 'Log in'}
+        </button>
 
-              {submitStatus === 'success' && (
-                <div className="submit-success">
-                  Logged in (UI only — connect your auth API when ready).
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                <div className="submit-error">
-                  Please enter your email and password.
-                </div>
-              )}
-            </form>
-
-            <div className="login-divider">
-              <span>or</span>
-            </div>
-
-            <div ref={googleButtonRef} className="login-google-button" />
-
-            <p className="login-footer">
-              Don&apos;t have an account? <Link to="/signup">Sign up</Link>
-            </p>
+        {submitStatus === 'success' && (
+          <div className="auth-message auth-message--success">
+            Logged in (UI only — connect your auth API when ready).
           </div>
-        </div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="auth-message auth-message--error">
+            Please enter your email and password.
+          </div>
+        )}
+      </form>
+
+      <div className="auth-divider">
+        <span>or continue with</span>
       </div>
-    </section>
+
+      <div ref={googleButtonRef} className="auth-google" />
+    </AuthLayout>
   );
 };
 
