@@ -11,6 +11,7 @@ const AuthLayout = ({
   visualBadge,
   visualTitle,
   visualText,
+  visualImage = '/Lawyer2.png',
 }) => (
   <section className="auth-page">
     <div className="auth-shell">
@@ -37,7 +38,11 @@ const AuthLayout = ({
         )}
       </div>
 
-      <aside className="auth-visual" aria-hidden="true">
+      <aside
+        className="auth-visual"
+        style={{ backgroundImage: `url('${visualImage}')` }}
+        aria-hidden="true"
+      >
         <div className="auth-visual-overlay" />
         <div className="auth-visual-content">
           <div className="auth-float auth-float--badge">{visualBadge}</div>

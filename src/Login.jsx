@@ -77,6 +77,7 @@ const Login = () => {
     <AuthLayout
       title="Welcome back"
       subtitle="Log in to your Canadian legal workspace for drafting, research, and secure case context."
+      visualImage="/Lawyer2.png"
       visualBadge="Canadian Legal AI"
       visualTitle="Practice smarter with secure AI"
       visualText="Draft faster, research Canadian case law, and keep firm knowledge in one place."

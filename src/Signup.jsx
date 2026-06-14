@@ -42,6 +42,7 @@ const Signup = () => {
     <AuthLayout
       title="Create an account"
       subtitle="Join HermesAI and start working in a secure Canadian legal workspace built for research, drafting, and case context."
+      visualImage="/Lawyer2.png"
       visualBadge="Built for Law Firms"
       visualTitle="Your firm knowledge, organized"
       visualText="Upload precedents, research with CanLII, and draft with context-aware AI."
