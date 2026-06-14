@@ -6,6 +6,8 @@ export const industrySolutionsPage = {
     'Whether you run a firm, manage an in-house department, or lead litigation — HermesAI adapts to how Canadian legal teams actually work.',
   intro:
     'Generic AI tools weren\'t built for legal confidentiality, Canadian case law, or firm-specific context. HermesAI is designed for the teams that need all three.',
+  heroDetail:
+    'From boutique firms to in-house departments and litigation groups, teams use HermesAI to draft faster, research Canadian law in context, and keep firm knowledge in one secure place — without giving up professional judgment.',
   segments: [
     {
       title: 'Law Firms',

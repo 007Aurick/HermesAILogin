@@ -14,11 +14,16 @@
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 3rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .platform-hero-copy {
-  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 22rem;
+  max-width: none;
+  padding-right: 1rem;
 }
 
 .platform-hero-media {
@@ -61,7 +66,7 @@
 
 .platform-hero h1 {
   margin: 0 0 1.25rem;
-  max-width: 16ch;
+  max-width: 14ch;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -70,24 +75,23 @@
 
 .platform-subtitle {
   margin: 0 0 1rem;
-  max-width: 42rem;
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
   line-height: 1.65;
   color: var(--text);
 }
 
 .platform-intro {
-  margin: 0 0 2rem;
-  max-width: 40rem;
+  margin: 0;
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-muted);
 }
 
-.platform-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+.platform-hero-detail {
+  margin: 1.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
 .platform-highlights {
@@ -235,6 +239,11 @@
   .platform-hero-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .platform-hero-copy {
+    min-height: auto;
+    padding-right: 0;
   }
 
   .platform-hero-media {

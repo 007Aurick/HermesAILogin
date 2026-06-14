@@ -13,6 +13,8 @@ export const platformPages = {
       'Generate first drafts in seconds — demand letters, summaries, memos, contracts, and legal correspondence without starting from a blank page.',
     intro:
       'HermesAI helps Canadian legal teams reduce repetitive drafting work while keeping lawyers in control of every edit and final output.',
+    heroDetail:
+      'Start from firm templates, clause libraries, and matter context — then refine every output before it leaves your desk. Drafting stays inside one secure Canadian workspace built for how lawyers actually work.',
     heroImage: '/legal-docs.jpg',
     imageAlt: 'Lawyer drafting and signing legal documents',
     highlights: [
@@ -46,6 +48,8 @@ export const platformPages = {
       'Ask legal questions in plain English and retrieve relevant Canadian case law through integrated CanLII research workflows.',
     intro:
       'Stop switching between research tools and your workspace. HermesAI brings Canadian legal research closer to where drafting and case work already happen.',
+    heroDetail:
+      'Summarize decisions, extract citations, and follow up on relevant holdings without leaving the matter you are already working on. Research stays tied to Canadian sources — not generic web results.',
     heroImage: '/Lawyer3.png',
     imageAlt: 'Legal research with scales of justice and case materials',
     highlights: [
@@ -79,6 +83,8 @@ export const platformPages = {
       'Upload firm precedents, contracts, memos, and client files so AI responses are grounded in your own knowledge base.',
     intro:
       'Most legal AI tools fail because they lack firm-specific context. HermesAI builds a secure document vault that turns your internal knowledge into institutional memory.',
+    heroDetail:
+      'Upload precedents, contracts, memos, and client files once — then let AI draw on that material for drafting, analysis, and answers. Your firm\'s knowledge stays searchable, secure, and usable across matters.',
     heroImage: '/nav-drafting.jpg',
     imageAlt: 'Law library shelves with legal reference volumes',
     highlights: [
@@ -112,6 +118,8 @@ export const platformPages = {
       'Built for Canadian legal data security — with infrastructure designed for confidentiality, control, and Canadian data residency.',
     intro:
       'For law firms, security is not a secondary feature. HermesAI is built with a security-first architecture designed with legal confidentiality in mind.',
+    heroDetail:
+      'Canadian data residency, encrypted storage, secure authentication, and controlled access permissions help keep sensitive client work where it belongs. Security is woven into the platform — not bolted on after the fact.',
     heroImage: '/outcome-security.jpg',
     imageAlt: 'Secure data protection for legal documents',
     highlights: [

@@ -11,14 +11,7 @@ const PlatformPage = ({ page }) => (
           <h1>{page.title}</h1>
           <p className="platform-subtitle">{page.subtitle}</p>
           <p className="platform-intro">{page.intro}</p>
-          <div className="platform-actions">
-            <Link to="/contact" className="btn btn-primary">
-              Book a Demo
-            </Link>
-            <Link to="/signup" className="btn btn-secondary">
-              Try the Platform
-            </Link>
-          </div>
+          {page.heroDetail ? <p className="platform-hero-detail">{page.heroDetail}</p> : null}
         </div>
         <div className="platform-hero-media">
           <img src={page.heroImage} alt={page.imageAlt} />

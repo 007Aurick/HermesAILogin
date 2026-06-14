@@ -13,14 +13,7 @@ const IndustrySolutions = () => (
           <h1>{industrySolutionsPage.title}</h1>
           <p className="platform-subtitle">{industrySolutionsPage.subtitle}</p>
           <p className="platform-intro">{industrySolutionsPage.intro}</p>
-          <div className="platform-actions">
-            <Link to="/contact" className="btn btn-primary">
-              Book a Demo
-            </Link>
-            <Link to="/signup" className="btn btn-secondary">
-              Try the Platform
-            </Link>
-          </div>
+          <p className="platform-hero-detail">{industrySolutionsPage.heroDetail}</p>
         </div>
         <div className="platform-hero-media">
           <img
